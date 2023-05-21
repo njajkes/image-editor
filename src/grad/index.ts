@@ -1,0 +1,1 @@
+export { HistogramWidget } from './ui/widget'
