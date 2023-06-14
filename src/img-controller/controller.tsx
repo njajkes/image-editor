@@ -1,3 +1,4 @@
+import { FurryWidget } from '@/filter/widget'
 import { HistogramWidget } from '@/grad'
 import { IPicture } from '@/lib'
 import { MonochromicWidget } from '@/monochromic/ui/widget'
@@ -6,6 +7,8 @@ import React from 'react'
 const enum Tabs {
   HISTOGRAM,
   MONOCHROME,
+
+  FURRY
 }
 
 const tabSwitcher = (tab: Tabs, srcPicture: IPicture) => {
@@ -13,7 +16,9 @@ const tabSwitcher = (tab: Tabs, srcPicture: IPicture) => {
     case Tabs.HISTOGRAM:
       return <HistogramWidget srcPicture={srcPicture} />
     case Tabs.MONOCHROME:
-      return <MonochromicWidget srcPicture={srcPicture}/>
+      return <MonochromicWidget srcPicture={srcPicture} />
+    case Tabs.FURRY:
+      return <FurryWidget srcPicture={srcPicture} />
     default:
       return <></>
   }
@@ -43,6 +48,7 @@ const TabPicker = ({
     <div className='pb-2 flex flex-row'>
       <TabElement title='Histogram' isActive={currentTab === Tabs.HISTOGRAM} onClick={() => setter(Tabs.HISTOGRAM)} />
       <TabElement title='Monochrome' isActive={currentTab === Tabs.MONOCHROME} onClick={() => setter(Tabs.MONOCHROME)} />
+      <TabElement title='Fourier [DANGER]' isActive={currentTab === Tabs.FURRY} onClick={() => setter(Tabs.FURRY)} />
     </div>
   )
 }
