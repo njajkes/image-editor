@@ -6,7 +6,8 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx}',
     './src/grad/**/*.{js,ts,jsx,tsx}',
     './src/img-controller/**/*.{js,ts,tsx,jsx}',
-    './src/monochromic/**/*.{js,ts,tsx,jsx}'
+    './src/monochromic/**/*.{js,ts,tsx,jsx}',
+    './src/**/*.{js,ts,tsx,jsx}'
   ],
   theme: {
     extend: {
